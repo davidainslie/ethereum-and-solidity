@@ -1,0 +1,47 @@
+# Bloop and metals
+.bloop
+.bsp
+
+# Metals
+project/metals.sbt
+.metals
+
+# VS Code
+.vscode
+
+# Scala 3
+.tasty
+
+# sbt
+project/project/
+project/target/
+target/
+
+# Eclipse
+build/
+.classpath
+.project
+.settings
+.worksheet
+bin/
+.cache
+
+# Intellij idea
+*.log
+*.iml
+*.ipr
+*.iws
+.idea
+
+# Mac
+.DS_Store
+
+# Other?
+.history
+.scala_dependencies
+.cache-main
+.cli-kondo
+/node_modules
+
+# General
+*.class
