@@ -1,6 +1,8 @@
 # Ethereum and Solidity
 
-View the diagrams directly in IDE or at [diagrams.net](https://www.diagrams.net/).
+View the diagrams directly in IDE (VS Code or Intellij with plugin for `draw.io`) or at [diagrams.net](https://www.diagrams.net/).
+
+## Introduction
 
 ```
 For Developers
@@ -64,7 +66,7 @@ An account on the Ethereum network is made up of an `address`, `public key` and 
                                          +---------------------+
 ```
 
-## Get Some Ether to Test
+## Ethereum Blockchain
 
 Go to https://rinkeby-faucet.com/ where we can get some (monopoly) Ether. When we acquire some Ether (0.001 in this case), what actually happens? When we receive this Ether we get the message:
 
@@ -127,3 +129,51 @@ Time          +----------------------+
                                                                                                                  has to validate (mine) all the incoming
                                                                                                                  transactions (that will form a block)
 ```
+
+So each node tries to "find the next hash" and once found, needs to pass that on to all other nodes to verify. This is `block time`.
+Bitcoin may look for a hash that starts with four zeros (0000). Ethereum looks for a hash that when converted to base 10 needs to be under some target value:
+
+```
++----+        +-----+         +-----------+      +---------------+       +---------------+
+|Data|   +    |Nonce|    =    |Output Hash|      |Hash as base 10|       |Less than 1000?|
++----+        +-----+         +-----------+      +---------------+       +---------------+
+
+
+ "Hi"           0               a23042b2          1789172                 no
+
+
+
+ "Hi"           1               cbc1481           2958928                 no
+
+
+
+ "Hi"           2               d9eed91           1393899                 no
+
+
+
+ "Hi"           3               0077bbb           100                     yes
+```
+
+Ethereum's target block time is `15 seconds`, so the target number keeps changing in an attempt to be around that 15 second mark:
+
+```
++----------+             +----------+          +----------+
+|Block #100|             |Block #101|          |Block #102|
+|          +------------->          +---------->          |
+|          |             |          |          |          |
++----------+             +----------+          +----------+
+
+ Find hash                Find hash             Find hash
+ < 1000                   < 10,000              < 5000
+
+
+ 20 seconds               5 seconds             17 seconds
+```
+
+## Blockchain Demos
+
+- https://blockchaindemo.io/
+- https://www.freecodecamp.org/news/how-does-blockchain-really-work-i-built-an-app-to-show-you-6b70cd4caf7d/
+- https://coindemo.io/
+- https://www.freecodecamp.org/news/how-does-bitcoin-work-i-built-an-app-to-show-you-f9fcd50bdd0d/
+- https://etherscan.io/
