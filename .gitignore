@@ -41,7 +41,7 @@ bin/
 .scala_dependencies
 .cache-main
 .cli-kondo
-/node_modules
+**/node_modules
 
 # General
 *.class
