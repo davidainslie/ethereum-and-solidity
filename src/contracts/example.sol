@@ -17,43 +17,43 @@ Account addresses                             Roles
 pragma solidity ^0.8.9;
 
 contract Inbox {
-    string public message;
+  string public message;
     
-    constructor(string memory initialMessage) {
-        message = initialMessage;
-    }
+  constructor(string memory initialMessage) {
+    message = initialMessage;
+  }
     
-    function setMessage(string memory newMessage) public {
-        message = newMessage;
-    }
+  function setMessage(string memory newMessage) public {
+    message = newMessage;
+  }
     
-    /**
-     * +----------------------------------------------------------------------------------+
-     * | Common function types                                                            |
-     * +-----------+----------------------------------------------------------------------+
-     * |           |                                                                      |
-     * | public    |   Anyone can call this function                                      |
-     * +-----------+----------------------------------------------------------------------+
-     * |           |                                                                      |
-     * | private   |   Only this contract can call this function                          |
-     * +-----------+----------------------------------------------------------------------+
-     * |           |                                                                      |
-     * | view      |   This function returns data and does not modify the contract's data |
-     * +-----------+----------------------------------------------------------------------+
-     * |           |                                                                      |
-     * | constant  |   This function returns data and does not modify the contract's data |
-     * +-----------+----------------------------------------------------------------------+
-     * |           |                                                                      |
-     * | pure      |   Function will not modify or even read the contract's data          |
-     * +-----------+----------------------------------------------------------------------+
-     * |           |                                                                      |
-     * | payable   |   When someone calls this function they might send ether along       |
-     * |           |                                                                      |
-     * +-----------+----------------------------------------------------------------------+
-     *
-     * We don't really need this function, as one is automatically created for the "public message" i.e. a "message" (accessor) function. 
-     */
-    function getMessage() public view returns (string memory) {
-        return message;
-    }
+  /**
+    * +----------------------------------------------------------------------------------+
+    * | Common function types                                                            |
+    * +-----------+----------------------------------------------------------------------+
+    * |           |                                                                      |
+    * | public    |   Anyone can call this function                                      |
+    * +-----------+----------------------------------------------------------------------+
+    * |           |                                                                      |
+    * | private   |   Only this contract can call this function                          |
+    * +-----------+----------------------------------------------------------------------+
+    * |           |                                                                      |
+    * | view      |   This function returns data and does not modify the contract's data |
+    * +-----------+----------------------------------------------------------------------+
+    * |           |                                                                      |
+    * | constant  |   This function returns data and does not modify the contract's data |
+    * +-----------+----------------------------------------------------------------------+
+    * |           |                                                                      |
+    * | pure      |   Function will not modify or even read the contract's data          |
+    * +-----------+----------------------------------------------------------------------+
+    * |           |                                                                      |
+    * | payable   |   When someone calls this function they might send ether along       |
+    * |           |                                                                      |
+    * +-----------+----------------------------------------------------------------------+
+    *
+    * We don't really need this function, as one is automatically created for the "public message" i.e. a "message" (accessor) function. 
+    */
+  function getMessage() public view returns (string memory) {
+    return message;
+  }
 }

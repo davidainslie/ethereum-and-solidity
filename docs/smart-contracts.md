@@ -253,3 +253,28 @@ Truffle is a command line tool (CLI):
 ```
 
 However, we don't have to use Truffle and indeed we will try not to (at the time of writing, it is a fairly unstable product). Take a look at folder `projects`.
+
+## Testing (Locally)
+
+```
+                  +--------+
+                  |Solidity|
+                  |compiler|
+                  +---+----+
+                      |
+         +------------+-----------+
+         |                        |
+     +---v----+                 +-v-+
+     |Bytecode|                 |ABI|
+     +---+----+                 +-+-+
+         |Deploy                  |
++--------+------------+           |
+|        |            |           |
+| +------v----------+ |         +-v--+
+| |Contract instance<-+---------+Web3|
+| +-----------------+ |         +----+
+|                     |
+|      Ganache        |
++---------------------+
+   Local test network
+```
