@@ -278,3 +278,28 @@ However, we don't have to use Truffle and indeed we will try not to (at the time
 +---------------------+
    Local test network
 ```
+
+```shell
+npm test
+```
+
+OR
+
+```shell
+npm run test
+```
+
+When we test using a `Ganache` local test network, there are accounts provided, which is handy because we need to use an account to deploy a contract (to test):
+```
+                 Ganache Local Test Network
+
+                 +-----------------+
+                 |Unlocked Accounts|
+                 +-----------------+
++----+           |0xz94 .....      |
+|Web3+----------->-----------------+
++----+           |0x182 .....      |
+                 +-----------------+
+                 |0xecb .....      |
+                 +-----------------+
+```
