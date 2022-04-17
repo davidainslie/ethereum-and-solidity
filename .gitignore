@@ -32,6 +32,8 @@ bin/
 *.ipr
 *.iws
 .idea
+**/.idea
+**/.psc-ide-port
 
 # Mac
 .DS_Store
@@ -42,6 +44,7 @@ bin/
 .cache-main
 .cli-kondo
 **/node_modules
+projects/inbox/package-lock.json
 
 # General
 *.class

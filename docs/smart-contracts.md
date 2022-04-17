@@ -303,3 +303,43 @@ When we test using a `Ganache` local test network, there are accounts provided, 
                  |0xecb .....      |
                  +-----------------+
 ```
+
+## Deploy
+
+When we test (locally) using Ganache, we use the relevant `provider`:
+```
+                                    Web3
+                                     |
+                                     |
+                                     |instantiate
+                                     |
+                                     v
+ Ganache -------> Provider -------> web3
+```
+
+To deploy to a real network (though we'll use Rinkeby which is actually a test network):
+```
+     Rinkeby Network
++-----------------------+                                             +----+
+|                       |                                             |Web3|
+|                       |                                             +-+--+
+| Node -----------+     |                                               |
+|  |              |     |                                               |instantiate
+|  |              v     |       +----------+          +--------+      +-v--+
+|  |         Infura Node+------>|Infura API+--------> |Provider+----->|web3|
+|  |              ^     |       +----------+          +--+-----+      +----+
+|  |              |     |                                ^
+|  v              |     |                                |
+| Node -----------+     |                                |
+|                       |                             Account
++-----------------------+                             Mnemonic
+```
+
+This time we need to have an account that has Ether on the network (with Ganache this is all provided for you).
+
+Deploying via `Infura` saves us from setting up a `node` on our own machine - Follow this sidebar:
+
+> Sign up at http://infura.io
+> Once signed in we need to get an API key.
+> 
+> Create a new project and choose Rinkeby, and copy the relevant link (API key).
